@@ -129,6 +129,8 @@ function love.load()
     Texty = Textbox(headImages, 70, 400, snds)
     Texty:setHeadImage("susieDefault")
 
+    CruelAngel()
+
 end
 
 function love.draw()
