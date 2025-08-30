@@ -206,7 +206,7 @@ function CruelAngel()
         Susie.currentframecount = 1
         Texty:setSound("ralsei")
         Texty:setHeadImage("ralseiNerd")
-        Texty:setString("Well it's {r}hard to say{w}.                                    We don't know what heaven's like, and {b]books{w} may be an {y}allegory{w}.")
+        Texty:setString("Well it's {r}hard to say{w}.                                    We don't know what heaven's like, and {b}books{w} may be an {y}allegory{w}.")
         tick.delay(function () CruelAngel() end, 5)
     elseif eventno == 9 then
         Texty:setString("")
