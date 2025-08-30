@@ -16,7 +16,16 @@ local Ralsei
 local Texty
 local Fountain
 
-local backgroundImage = love.graphics.newImage("sprites/bg.png")
+local backgroundImages = {
+    ["castleTown"] = love.graphics.newImage("sprites/bg.png")
+}
+
+local currentBackground = "castleTown"
+
+local currentBackgroundPos = {
+    ["x"] = 0,
+    ["y"] = 0
+}
 
 local prophecy = {
     image = love.graphics.newImage("sprites/prophecy.png"),
@@ -131,7 +140,7 @@ function love.keypressed(key)
 end
 
 function love.draw()
-    love.graphics.draw(backgroundImage, 0, 0)
+    love.graphics.draw(backgroundImages[currentBackground], currentBackgroundPos["x"], currentBackgroundPos["y"])
 
     Susie:draw()
     Ralsei:draw()
