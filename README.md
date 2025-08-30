@@ -1,5 +1,7 @@
 A simple animation tool made with LÖVE. Bundled with an example animation.
+
 Assets (c) Toby Fox all rights reserved.
+Sprites ripped by awesome people on TheSpritersResource
 
 Originally a small local project made because I can't draw, now a small online project for any to use.
 

@@ -60,7 +60,7 @@ function Textbox:increment(dt)
         if math.fmod(self.displaylength,2) == 0 then
             local incrementString = string.sub(self.fullString, math.floor(self.displaylength/2), math.floor(self.displaylength/2))
 
-                if incrementString == "[" then
+                if incrementString == "{" then
 
                     self.isBuffering = true
 
@@ -70,7 +70,7 @@ function Textbox:increment(dt)
 
                         incrementString = string.sub(self.fullString, math.floor(self.displaylength/2), math.floor(self.displaylength/2))
 
-                        if incrementString == "]" then
+                        if incrementString == "}" then
                             
                             self.isBuffering = false
                             
