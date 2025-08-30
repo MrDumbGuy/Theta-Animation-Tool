@@ -131,14 +131,6 @@ function love.load()
 
 end
 
-function love.keypressed(key)
-    
-    if key == "z" then
-        CruelAngel()
-    end
-
-end
-
 function love.draw()
     love.graphics.draw(backgroundImages[currentBackground], currentBackgroundPos["x"], currentBackgroundPos["y"])
 
