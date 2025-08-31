@@ -22,9 +22,10 @@ local backgroundImages = {
 
 local currentBackground = "castleTown"
 
-local currentBackgroundPos = {
-    ["x"] = 0,
-    ["y"] = 0
+BackgroundPos = {
+    x = 0,
+    y = 0,
+    size = 1
 }
 
 local prophecy = {
@@ -129,15 +130,22 @@ function love.load()
     Texty = Textbox(headImages, 70, 400, snds)
     Texty:setHeadImage("susieDefault")
 
+    Drawables = {
+        Susie,
+        Ralsei,
+    }
+
     CruelAngel()
 
 end
 
 function love.draw()
-    love.graphics.draw(backgroundImages[currentBackground], currentBackgroundPos["x"], currentBackgroundPos["y"])
+    love.graphics.draw(backgroundImages[currentBackground], BackgroundPos.x, BackgroundPos.y, 0, BackgroundPos.size, BackgroundPos.size)
 
-    Susie:draw()
-    Ralsei:draw()
+    for i = 1, #Drawables do
+        Drawables[i]:draw()
+    end
+
     Texty:draw()
 
     Fountain:draw()
@@ -164,6 +172,13 @@ function love.update(dt)
     Fountain:update(dt)
     Texty:update(dt)
     tick.update(dt)
+
+    --The following sort rearranges the Drawables array such that Asset()s at the bottom are drawn on top.
+
+    table.sort(Drawables, function(a, b)
+        return a.y < b.y
+    end)
+
 end
 
 function CruelAngel()
