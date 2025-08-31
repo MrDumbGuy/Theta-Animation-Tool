@@ -3,6 +3,7 @@ tick = require "tick"
 Object = require "classic"
 require "assets"
 require "textbox"
+require "camera"
 
 love.graphics.setDefaultFilter("nearest")
 
