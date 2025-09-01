@@ -1,3 +1,29 @@
+--[[
+An Asset() is an Object with a name, an array of animations, an x and y position, a set of offsets 
+for its animations and a boolean determining whether it is currently drawn.
+
+The animatios are passed as such:
+
+animationArray = {
+    [1] = {"animationName", animationLength, animationFramerate}
+}
+
+Upon creation, the Asset object turns this array into ImageData it can use by scouring in
+
+    sprites/animationName/1.png, sprites/animationName/2.png
+
+and so on.
+
+The frames MUST be named 1 through the number of frames and have a .png extension. For example animations, check the "sprites/" folder
+
+Asset:setAnimation(number) sets the Object's animation to the given number. This function only accepts the number the animation
+is indexed in, not the name of the animation.
+
+Asset:setFrame(number) sets the animation's current frame to the set number.
+This will pause the animation, and you must manually reactivate it with Asset.isactive = true later on.
+
+]]
+
 Asset = Object:extend()
 
 function Asset:new(name, frames, x, y, offsets)
